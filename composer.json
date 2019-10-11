@@ -1,5 +1,6 @@
 {
     "name": "helen/brain-games",
+    "version": "0.0.3",
     "description": "Brain Games Hexlet PHP Project 1",
     "type": "project",
     "authors": [
