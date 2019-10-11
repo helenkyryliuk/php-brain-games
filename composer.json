@@ -1,12 +1,15 @@
 {
-    "name": "helen/php-project1",
+    "name": "helen/brain-games",
     "description": "Brain Games Hexlet PHP Project 1",
     "type": "project",
     "authors": [
         {
-            "name": "Helen Kyryliuk",
-            "email": "hkyryliuk@th2.com"
+            "name": "Helen Kyryliuk"
         }
     ],
-    "require": {}
+    "require": {},
+    "license": "MIT",
+    "bin": [
+        "./brain-games"
+    ]
 }
