@@ -10,6 +10,6 @@
     "require": {},
     "license": "MIT",
     "bin": [
-        "./brain-games"
+        "bin/brain-games"
     ]
 }
