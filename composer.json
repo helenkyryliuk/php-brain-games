@@ -7,10 +7,22 @@
             "name": "Helen Kyryliuk"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            "src/cli.php"
+        ]
+    },
+    "scripts": {
+		"phpcs": "phpcs"
+	},
     "license": "MIT",
     "minimum-stability": "dev",
     "bin": [
         "bin/brain-games"
-    ]
+    ],
+    "require-dev": {
+    }
 }
