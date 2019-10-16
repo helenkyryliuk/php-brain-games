@@ -12,6 +12,7 @@
     },
     "autoload": {
         "files": [
+            "src/even.php",
             "src/cli.php"
         ]
     },
@@ -21,7 +22,8 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "bin": [
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-games"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0@dev"
