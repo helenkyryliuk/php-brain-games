@@ -20,7 +20,6 @@
 		"phpcs": "phpcs"
 	},
     "license": "MIT",
-    "minimum-stability": "dev",
     "bin": [
         "bin/brain-even",
         "bin/brain-games"
