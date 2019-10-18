@@ -15,7 +15,7 @@ function calc()
         if ($randomNum === 0) {
             $questionToString = "$randomNumber1 + $randomNumber2";
             $correctAnswer = $randomNumber1 + $randomNumber2;
-        } else if ($randomNum === 1) {
+        } elseif ($randomNum === 1) {
             $questionToString = "$randomNumber1 - $randomNumber2";
             $correctAnswer = $randomNumber1 - $randomNumber2;
         } else {
