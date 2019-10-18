@@ -23,8 +23,8 @@
 	},
     "license": "MIT",
     "bin": [
-        "bin/brain-calc",
-        "bin/brain-even",
+        "bin/brain-calc-php",
+        "bin/brain-even-php",
         "bin/brain-games"
     ],
     "require-dev": {

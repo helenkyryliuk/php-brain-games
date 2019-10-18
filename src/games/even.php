@@ -14,6 +14,5 @@ function even()
         $item = [$randomNumber, $correctAnswer];
         $result[] = $item;
     }
-    var_dump($result);
     return [$description, $result];
 }
