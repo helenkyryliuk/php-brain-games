@@ -4,19 +4,19 @@ namespace BrainGames\Progression;
 
 use function BrainGames\Random\getRandomNumber;
 
-function generateProgression($randomNumber) 
+function generateProgression($randomNumber)
 {
     $result = [];
     $randomInterval = rand(1, 10);
     $value = $randomNumber;
-    for ($i = 0; $i < 10; $i +=1) {
+    for ($i = 0; $i < 10; $i += 1) {
         $value += $randomInterval;
         $result[] = $value;
     }
     return $result;
 }
 
-function generateProgressionString($randomIndex, $array) 
+function generateProgressionString($randomIndex, $array)
 {
     $array[$randomIndex] = '..';
     $result = implode(' ', $array);
