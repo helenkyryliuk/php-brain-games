@@ -12,8 +12,10 @@
     },
     "autoload": {
         "files": [
-            "src/even.php",
-            "src/cli.php"
+            "src/games/even.php",
+            "src/games/calculator.php",
+            "src/cli.php",
+            "src/random.php"
         ]
     },
     "scripts": {
@@ -21,6 +23,7 @@
 	},
     "license": "MIT",
     "bin": [
+        "bin/brain-calc",
         "bin/brain-even",
         "bin/brain-games"
     ],
