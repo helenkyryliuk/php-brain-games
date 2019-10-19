@@ -29,11 +29,10 @@ function progress()
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumber = getRandomNumber();
-        $randomIndex = rand(0, 10);
+        $randomIndex = rand(1, 9);
         $array = generateProgression($randomNumber);
         $questionToString = generateProgressionString($randomIndex, $array);
         $correctAnswer = $array[$randomIndex];
-        var_dump($correctAnswer);
         $item = [$questionToString, (string) $correctAnswer];
         $result[] = $item;
     }
