@@ -13,6 +13,7 @@
     "autoload": {
         "files": [
             "src/games/even.php",
+            "src/games/prime.php",
             "src/games/progression.php",
             "src/games/gcd.php",
             "src/games/calculator.php",
@@ -26,6 +27,7 @@
     "license": "MIT",
     "bin": [
         "bin/brain-calc-php",
+        "bin/brain-prime-php",
         "bin/brain-progression-php",
         "bin/brain-gcd-php",
         "bin/brain-even-php",
