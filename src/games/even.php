@@ -2,14 +2,13 @@
 
   namespace BrainGames\Even;
   
-  use function BrainGames\Random\getRandomNumber;
+  $description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function even()
 {
-    $description = 'Answer "yes" if the number is even, otherwise answer "no".';
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber = getRandomNumber();
+        $randomNumber = rand(1, 99);
         $correctAnswer = $randomNumber % 2 === 0 ? 'yes' : 'no';
         $item = [$randomNumber, $correctAnswer];
         $result[] = $item;

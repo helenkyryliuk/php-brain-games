@@ -17,8 +17,7 @@
             "src/games/progression.php",
             "src/games/gcd.php",
             "src/games/calculator.php",
-            "src/cli.php",
-            "src/random.php"
+            "src/cli.php"
         ]
     },
     "scripts": {

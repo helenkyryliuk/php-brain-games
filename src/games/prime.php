@@ -2,11 +2,9 @@
 
 namespace BrainGames\Prime;
 
-use function BrainGames\Random\getRandomNumber;
-
 function isPrime($num)
 {
-    if ($num === 0 || $num === 1) {
+    if ($num < 2) {
         return false;
     }
         $temp = $num - 1;
@@ -17,13 +15,13 @@ function isPrime($num)
     }
     return true;
 }
+$description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function prime()
 {
-    $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber = getRandomNumber();
+        $randomNumber = rand(1, 99);
         $correctAnswer = isPrime($randomNumber) ? 'yes' : 'no';
         $item = [$randomNumber, $correctAnswer];
         $result[] = $item;

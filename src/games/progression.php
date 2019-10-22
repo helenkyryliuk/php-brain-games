@@ -23,9 +23,10 @@ function generateProgressionString($randomIndex, $array)
     return $result;
 }
 
+$description = 'What number is missing in the progression?';
+
 function progress()
 {
-    $description = 'What number is missing in the progression?';
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumber = getRandomNumber();

@@ -20,7 +20,7 @@ function run(array $questionsAndCorrectAnswers)
             line('Correct!');
         }
         if ($answer !== $correctAnswer) {
-            return line(
+            line(
                 "$answer is wrong answer ;(. Correct answer was $correctAnswer.\n
 Let's try again, $name!"
             );

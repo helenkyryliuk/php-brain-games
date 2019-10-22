@@ -2,8 +2,6 @@
 
 namespace BrainGames\Gcd;
 
-use function BrainGames\Random\getRandomNumber;
-
 function getGcd($num1, $num2)
 {
     if ($num1 === 0 && $num2 === 0) {
@@ -26,13 +24,14 @@ function getGcd($num1, $num2)
     }
 }
 
+$description = 'Find the greatest common divisor of given numbers.';
+
 function gcd()
 {
-    $description = 'Find the greatest common divisor of given numbers.';
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber1 = getRandomNumber();
-        $randomNumber2 = getRandomNumber();
+        $randomNumber1 = rand(1, 99);
+        $randomNumber2 = rand(1, 99);
         $randomNum = rand(0, 3);
         $questionToString = "$randomNumber1 $randomNumber2";
         $correctAnswer = getGcd($randomNumber1, $randomNumber2);

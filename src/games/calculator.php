@@ -2,15 +2,14 @@
 
 namespace BrainGames\Calculator;
 
-use function BrainGames\Random\getRandomNumber;
+$description = 'What is the result of the expression?';
 
 function calc()
 {
-    $description = 'What is the result of the expression?';
     $result = [];
     for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber1 = getRandomNumber();
-        $randomNumber2 = getRandomNumber();
+        $randomNumber1 = rand(1, 99);
+        $randomNumber2 = rand(1, 99);
         $randomNum = rand(0, 3);
         switch ($randomNum) {
             case 0:
