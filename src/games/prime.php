@@ -15,16 +15,17 @@ function isPrime($num)
     }
     return true;
 }
-$description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function prime()
 {
-    $result = [];
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber = rand(1, 99);
-        $correctAnswer = isPrime($randomNumber) ? 'yes' : 'no';
-        $item = [$randomNumber, $correctAnswer];
-        $result[] = $item;
+    $parametersForPrimeGame = [];
+    $numberOfTrials = 3;
+    for ($i = 0; $i < $numberOfTrials; $i += 1) {
+        $generatedNumberForPlayer = rand(1, 99);
+        $correctAnswer = isPrime($generatedNumberForPlayer) ? 'yes' : 'no';
+        $questionAndAnswer = [$generatedNumberForPlayer, $correctAnswer];
+        $parametersForPrimeGame[] = $questionAndAnswer;
     }
-    return [$description, $result];
+    return [DESCRIPTION, $parametersForPrimeGame];
 }

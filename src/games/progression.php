@@ -2,14 +2,12 @@
 
 namespace BrainGames\Progression;
 
-use function BrainGames\Random\getRandomNumber;
-
-function generateProgression($randomNumber)
+function generateProgression($randomNumber, $randomInterval)
 {
     $result = [];
-    $randomInterval = rand(1, 10);
     $value = $randomNumber;
-    for ($i = 0; $i < 10; $i += 1) {
+    $numbersOfChoices = 10;
+    for ($i = 0; $i < $numbersOfChoices; $i += 1) {
         $value += $randomInterval;
         $result[] = $value;
     }
@@ -23,19 +21,21 @@ function generateProgressionString($randomIndex, $array)
     return $result;
 }
 
-$description = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 
 function progress()
 {
-    $result = [];
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber = getRandomNumber();
+    $parametersForProgressionGame = [];
+    $numberOfTrials = 3;
+    for ($i = 0; $i < $numberOfTrials; $i += 1) {
+        $generatedChoice = rand(1, 9);
+        $randomInterval = rand(1, 10);
         $randomIndex = rand(1, 9);
-        $array = generateProgression($randomNumber);
-        $questionToString = generateProgressionString($randomIndex, $array);
-        $correctAnswer = $array[$randomIndex];
-        $item = [$questionToString, (string) $correctAnswer];
-        $result[] = $item;
+        $progression = generateProgression($generatedChoice, $randomInterval);
+        $questionToString = generateProgressionString($randomIndex, $progression);
+        $correctAnswer = $progression[$randomIndex];
+        $questionAndAnswer = [$questionToString, (string) $correctAnswer];
+        $parametersForProgressionGame[] = $questionAndAnswer;
     }
-    return [$description, $result];
+    return [DESCRIPTION, $parametersForProgressionGame];
 }

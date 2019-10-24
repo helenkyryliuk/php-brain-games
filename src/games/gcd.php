@@ -24,19 +24,19 @@ function getGcd($num1, $num2)
     }
 }
 
-$description = 'Find the greatest common divisor of given numbers.';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function gcd()
 {
-    $result = [];
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber1 = rand(1, 99);
-        $randomNumber2 = rand(1, 99);
-        $randomNum = rand(0, 3);
-        $questionToString = "$randomNumber1 $randomNumber2";
-        $correctAnswer = getGcd($randomNumber1, $randomNumber2);
-        $item = [$questionToString, (string) $correctAnswer];
-        $result[] = $item;
+    $parametersForGcdGame = [];
+    $numberOfTrials = 3;
+    for ($i = 0; $i < $numberOfTrials; $i += 1) {
+        $firstNumberForPlayer = rand(1, 99);
+        $secondNumberForPlayer = rand(1, 99);
+        $questionToString = "$firstNumberForPlayer $secondNumberForPlayer";
+        $correctAnswer = getGcd($firstNumberForPlayer, $secondNumberForPlayer);
+        $questionAndAnswer = [$questionToString, (string) $correctAnswer];
+        $parametersForGcdGame[] = $questionAndAnswer;
     }
-    return [$description, $result];
+    return [DESCRIPTION, $parametersForGcdGame];
 }

@@ -24,6 +24,7 @@ function run(array $questionsAndCorrectAnswers)
                 "$answer is wrong answer ;(. Correct answer was $correctAnswer.\n
 Let's try again, $name!"
             );
+            return;
         }
     }
     

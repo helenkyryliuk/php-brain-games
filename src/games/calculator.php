@@ -2,31 +2,32 @@
 
 namespace BrainGames\Calculator;
 
-$description = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 
 function calc()
 {
-    $result = [];
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumber1 = rand(1, 99);
-        $randomNumber2 = rand(1, 99);
-        $randomNum = rand(0, 3);
-        switch ($randomNum) {
+    $parametersForCalcGame = [];
+    $numberOfTrials = 3;
+    for ($i = 0; $i < $numberOfTrials; $i += 1) {
+        $firstNumberForPlayer = rand(1, 99);
+        $secondNumberForPlayer = rand(1, 99);
+        $numberToGenerateOperator = rand(0, 2);
+        switch ($numberToGenerateOperator) {
             case 0:
-                $questionToString = "$randomNumber1 + $randomNumber2";
-                $correctAnswer = $randomNumber1 + $randomNumber2;
+                $questionToString = "$firstNumberForPlayer + $secondNumberForPlayer";
+                $correctAnswer = $firstNumberForPlayer + $secondNumberForPlayer;
                 break;
             case 1:
-                $questionToString = "$randomNumber1 - $randomNumber2";
-                $correctAnswer = $randomNumber1 - $randomNumber2;
+                $questionToString = "$firstNumberForPlayer - $secondNumberForPlayer";
+                $correctAnswer = $firstNumberForPlayer - $secondNumberForPlayer;
                 break;
             case 2:
-                $questionToString = "$randomNumber1 * $randomNumber2";
-                $correctAnswer = $randomNumber1 * $randomNumber2;
+                $questionToString = "$firstNumberForPlayer * $secondNumberForPlayer";
+                $correctAnswer = $firstNumberForPlayer * $secondNumberForPlayer;
                 break;
         }
-        $item = [$questionToString, (string) $correctAnswer];
-        $result[] = $item;
+        $questionAndAnswer = [$questionToString, (string) $correctAnswer];
+        $parametersForCalcGame[] = $questionAndAnswer;
     }
-    return [$description, $result];
+    return [DESCRIPTION, $parametersForCalcGame];
 }
