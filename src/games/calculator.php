@@ -4,29 +4,30 @@ namespace BrainGames\Calculator;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
+const OPERATORS = ['+', '-', '*'];
+
 function calc()
 {
     $parametersForCalcGame = [];
     $numberOfTrials = 3;
     for ($i = 0; $i < $numberOfTrials; $i += 1) {
-        $firstNumberForPlayer = rand(1, 99);
-        $secondNumberForPlayer = rand(1, 99);
-        $numberToGenerateOperator = rand(0, 2);
-        switch ($numberToGenerateOperator) {
-            case 0:
-                $questionToString = "$firstNumberForPlayer + $secondNumberForPlayer";
-                $correctAnswer = $firstNumberForPlayer + $secondNumberForPlayer;
+        $numForPlayer1 = rand(1, 99);
+        $numForPlayer2 = rand(1, 99);
+        $operator = rand(0, 2);
+        $operation = OPERATORS[$operator];
+        switch ($operation) {
+            case '+':
+                $answer = $numForPlayer1 + $numForPlayer2;
                 break;
-            case 1:
-                $questionToString = "$firstNumberForPlayer - $secondNumberForPlayer";
-                $correctAnswer = $firstNumberForPlayer - $secondNumberForPlayer;
+            case '-':
+                $answer = $numForPlayer1 - $numForPlayer2;
                 break;
-            case 2:
-                $questionToString = "$firstNumberForPlayer * $secondNumberForPlayer";
-                $correctAnswer = $firstNumberForPlayer * $secondNumberForPlayer;
+            case '*':
+                $answer = $numForPlayer1 * $numForPlayer2;
                 break;
         }
-        $questionAndAnswer = [$questionToString, (string) $correctAnswer];
+        $question = "$numForPlayer1 $operation $numForPlayer2";
+        $questionAndAnswer = [$question, (string) $answer];
         $parametersForCalcGame[] = $questionAndAnswer;
     }
     return [DESCRIPTION, $parametersForCalcGame];
