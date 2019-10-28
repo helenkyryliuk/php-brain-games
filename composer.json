@@ -12,12 +12,12 @@
     },
     "autoload": {
         "files": [
-            "src/games/even.php",
-            "src/games/prime.php",
-            "src/games/progression.php",
-            "src/games/gcd.php",
-            "src/games/calculator.php",
-            "src/cli.php"
+            "src/Games/Even.php",
+            "src/Games/Prime.php",
+            "src/Games/Progression.php",
+            "src/Games/Gcd.php",
+            "src/Games/Calculator.php",
+            "src/Cli.php"
         ]
     },
     "scripts": {

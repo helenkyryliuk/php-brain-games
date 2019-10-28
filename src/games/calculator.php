@@ -1,6 +1,8 @@
 <?php
 
-namespace BrainGames\Calculator;
+namespace BrainGames\Games\Calculator;
+
+use function BrainGames\Cli\run;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
@@ -8,27 +10,28 @@ const OPERATORS = ['+', '-', '*'];
 
 function calc()
 {
-    $parametersForCalcGame = [];
-    $numberOfTrials = 3;
-    for ($i = 0; $i < $numberOfTrials; $i += 1) {
-        $numForPlayer1 = rand(1, 99);
-        $numForPlayer2 = rand(1, 99);
-        $operator = rand(0, 2);
-        $operation = OPERATORS[$operator];
-        switch ($operation) {
-            case '+':
-                $answer = $numForPlayer1 + $numForPlayer2;
-                break;
-            case '-':
-                $answer = $numForPlayer1 - $numForPlayer2;
-                break;
-            case '*':
-                $answer = $numForPlayer1 * $numForPlayer2;
-                break;
-        }
-        $question = "$numForPlayer1 $operation $numForPlayer2";
-        $questionAndAnswer = [$question, (string) $answer];
-        $parametersForCalcGame[] = $questionAndAnswer;
-    }
-    return [DESCRIPTION, $parametersForCalcGame];
+        return run(
+            DESCRIPTION,
+            function () {
+                $numberOfTrials = 3;
+                $firstNumberForPlayer = rand(1, 99);
+                $secondNumberForPlayer = rand(1, 99);
+                $maxRandomValueToIdentifyOperator = 2;
+                $operator = rand(0, $maxRandomValueToIdentifyOperator);
+                $operation = OPERATORS[$operator];
+                switch ($operation) {
+                    case '+':
+                        $answer = $firstNumberForPlayer + $secondNumberForPlayer;
+                        break;
+                    case '-':
+                        $answer = $firstNumberForPlayer - $secondNumberForPlayer;
+                        break;
+                    case '*':
+                        $answer = $firstNumberForPlayer * $secondNumberForPlayer;
+                        break;
+                }
+                $question = "$firstNumberForPlayer $operation $secondNumberForPlayer";
+                return [$question, (string) $answer];
+            }
+        );
 }

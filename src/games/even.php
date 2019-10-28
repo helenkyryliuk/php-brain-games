@@ -1,18 +1,27 @@
 <?php
 
-  namespace BrainGames\Even;
+  namespace BrainGames\Games\Even;
+
+  use function BrainGames\Cli\run;
   
  const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+function isEven($number)
+{
+    if (($number % 2) === 0) {
+         return 'yes';
+    }
+     return 'no';
+}
+
 function even()
 {
-    $parametersForEvenGame = [];
-    $numberOfTrials = 3;
-    for ($i = 0; $i < $numberOfTrials; $i += 1) {
-        $generatedNumberForPlayer = rand(1, 99);
-        $correctAnswer = $generatedNumberForPlayer % 2 === 0 ? 'yes' : 'no';
-        $questionAndAnswer = [$generatedNumberForPlayer, $correctAnswer];
-        $parametersForEvenGame[] = $questionAndAnswer;
-    }
-    return [DESCRIPTION, $parametersForEvenGame];
+    return run(
+        DESCRIPTION,
+        function () {
+            $generatedNumberForPlayer = rand(1, 99);
+            $correctAnswer = isEven($generatedNumberForPlayer);
+            return [$generatedNumberForPlayer, $correctAnswer];
+        }
+    );
 }
