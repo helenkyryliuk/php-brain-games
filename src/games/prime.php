@@ -9,14 +9,14 @@ function isPrime($num)
     if ($num < 2) {
         return false;
     }
-        $temp = $num - 1;
-    for ($i = $temp; $i > 1; $i -= 1) {
+    for ($i = 2; $i <= $num / 2; $i += 1) {
         if ($num % $i === 0) {
-                return false;
+            return false;
         }
     }
     return true;
 }
+
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function prime()
@@ -24,9 +24,9 @@ function prime()
     return run(
         DESCRIPTION,
         function () {
-            $generatedNumberForPlayer = rand(1, 99);
-            $correctAnswer = isPrime($generatedNumberForPlayer) ? 'yes' : 'no';
-            return [$generatedNumberForPlayer, $correctAnswer];
+            $generatedQuestionForGame = rand(1, 99);
+            $correctAnswer = isPrime($generatedQuestionForGame) ? 'yes' : 'no';
+            return [$generatedQuestionForGame, $correctAnswer];
         }
     );
 }

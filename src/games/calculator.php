@@ -13,24 +13,23 @@ function calc()
         return run(
             DESCRIPTION,
             function () {
-                $numberOfTrials = 3;
-                $firstNumberForPlayer = rand(1, 99);
-                $secondNumberForPlayer = rand(1, 99);
+                $firstQuestionForGame = rand(1, 99);
+                $secondQuestionForGame = rand(1, 99);
                 $maxRandomValueToIdentifyOperator = 2;
                 $operator = rand(0, $maxRandomValueToIdentifyOperator);
                 $operation = OPERATORS[$operator];
                 switch ($operation) {
                     case '+':
-                        $answer = $firstNumberForPlayer + $secondNumberForPlayer;
+                        $answer = $firstQuestionForGame + $secondQuestionForGame;
                         break;
                     case '-':
-                        $answer = $firstNumberForPlayer - $secondNumberForPlayer;
+                        $answer = $firstQuestionForGame - $secondQuestionForGame;
                         break;
                     case '*':
-                        $answer = $firstNumberForPlayer * $secondNumberForPlayer;
+                        $answer = $firstQuestionForGame * $secondQuestionForGame;
                         break;
                 }
-                $question = "$firstNumberForPlayer $operation $secondNumberForPlayer";
+                $question = "$firstQuestionForGame $operation $secondQuestionForGame";
                 return [$question, (string) $answer];
             }
         );

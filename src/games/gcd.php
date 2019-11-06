@@ -33,10 +33,10 @@ function gcd()
     return run(
         DESCRIPTION,
         function () {
-            $firstNumberForPlayer = rand(1, 99);
-            $secondNumberForPlayer = rand(1, 99);
-            $questionToString = "$firstNumberForPlayer $secondNumberForPlayer";
-            $correctAnswer = getGcd($firstNumberForPlayer, $secondNumberForPlayer);
+            $firstQuestionForGame = rand(1, 99);
+            $secondQuestionForGame = rand(1, 99);
+            $questionToString = "$firstQuestionForGame $secondQuestionForGame";
+            $correctAnswer = getGcd($firstQuestionForGame, $secondQuestionForGame);
             return [$questionToString, (string) $correctAnswer];
         }
     );

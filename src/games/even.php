@@ -19,9 +19,9 @@ function even()
     return run(
         DESCRIPTION,
         function () {
-            $generatedNumberForPlayer = rand(1, 99);
-            $correctAnswer = isEven($generatedNumberForPlayer);
-            return [$generatedNumberForPlayer, $correctAnswer];
+            $generatedQuestionForGame = rand(1, 99);
+            $correctAnswer = isEven($generatedQuestionForGame);
+            return [$generatedQuestionForGame, $correctAnswer];
         }
     );
 }

@@ -30,10 +30,10 @@ function progress()
     return run(
         DESCRIPTION,
         function () {
-            $generatedChoice = rand(1, 9);
+            $generatedQuestion = rand(1, 9);
             $randomInterval = rand(1, 10);
             $randomIndex = rand(1, 9);
-            $progression = generateProgression($generatedChoice, $randomInterval);
+            $progression = generateProgression($generatedQuestion, $randomInterval);
             $questionToString = generateProgressionString($randomIndex, $progression);
             $correctAnswer = $progression[$randomIndex];
             return [$questionToString, (string) $correctAnswer];
