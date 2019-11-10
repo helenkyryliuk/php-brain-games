@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\Calculator;
+namespace BrainGames\games\Calculator;
 
 use function BrainGames\Cli\run;
 
@@ -15,8 +15,8 @@ function calc()
             function () {
                 $firstQuestionForGame = rand(1, 99);
                 $secondQuestionForGame = rand(1, 99);
-                $maxRandomValueToIdentifyOperator = 2;
-                $operator = rand(0, $maxRandomValueToIdentifyOperator);
+                $maxIndexOfOperatorsArray = 2;
+                $operator = rand(0, $maxIndexOfOperatorsArray);
                 $operation = OPERATORS[$operator];
                 switch ($operation) {
                     case '+':

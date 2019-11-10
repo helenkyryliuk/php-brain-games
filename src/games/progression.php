@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\Progression;
+namespace BrainGames\games\Progression;
 
 use function BrainGames\Cli\run;
 
@@ -30,9 +30,11 @@ function progress()
     return run(
         DESCRIPTION,
         function () {
-            $generatedQuestion = rand(1, 9);
-            $randomInterval = rand(1, 10);
-            $randomIndex = rand(1, 9);
+            $maxIndexOfProgressionArray = 9;
+            $generatedQuestion = rand(1, $maxIndexOfProgressionArray);
+            $maxIntervalForProgression = 10;
+            $randomInterval = rand(1, $maxIntervalForProgression);
+            $randomIndex = rand(1, $maxIndexOfProgressionArray);
             $progression = generateProgression($generatedQuestion, $randomInterval);
             $questionToString = generateProgressionString($randomIndex, $progression);
             $correctAnswer = $progression[$randomIndex];

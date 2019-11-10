@@ -12,11 +12,11 @@
     },
     "autoload": {
         "files": [
-            "src/Games/Even.php",
-            "src/Games/Prime.php",
-            "src/Games/Progression.php",
-            "src/Games/Gcd.php",
-            "src/Games/Calculator.php",
+            "src/games/Even.php",
+            "src/games/Prime.php",
+            "src/games/Progression.php",
+            "src/games/Gcd.php",
+            "src/games/Calculator.php",
             "src/Cli.php"
         ]
     },
@@ -25,11 +25,11 @@
 	},
     "license": "MIT",
     "bin": [
-        "bin/brain-calc-php",
-        "bin/brain-prime-php",
-        "bin/brain-progression-php",
-        "bin/brain-gcd-php",
-        "bin/brain-even-php"
+        "bin/brain-calc",
+        "bin/brain-prime",
+        "bin/brain-progression",
+        "bin/brain-gcd",
+        "bin/brain-even"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0@dev"
